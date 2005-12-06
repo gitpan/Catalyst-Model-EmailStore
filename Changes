@@ -1,5 +1,10 @@
 Revision history for Catalyst-Model-EmailStore
 
+0.02    Tue 06/12/05 18:13:32 
+        - Removed the CDBI overloading of bool from model classes
+          that causes problems within Catalyst
+        - Added some basic tests 
+
 0.01    Sun 04/12/05 18:12:55 
-        Initial release
+        - Initial release
 

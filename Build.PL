@@ -7,6 +7,7 @@ my $builder = Module::Build->new(
     license             => 'perl',
     dist_author         => 'Sebastian Willert <willert@cpan.org>',
     dist_version_from   => 'lib/Catalyst/Model/EmailStore.pm',
+    dist_abstract       => 'Email::Store model for Catalyst',
     build_requires => {
         'Test::More' => 0,
 		  'Email::Store' => '0.24',

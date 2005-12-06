@@ -5,7 +5,7 @@ use strict;
 use base qw/Catalyst::Base/;
 use NEXT;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -54,6 +54,9 @@ provided. All classes named therein (without the mandatory
 C<Class::DBI::Plugin> prefix) will be required and imported
 into C<Email::Store::DBI>.
 
+Also I've take the liberty to remove the overloading of 'bool' that is
+done automatically by CDBI and would cause $c->model( XXX ) to fail.
+
 I also suggest that you keep your Email::Store tables in
 their own database separate from your other tables
 
@@ -82,6 +85,10 @@ BEGIN {
 		my $to_import = shift;
 		$to_import->import(@_);
 	 };
+
+	 # remove overloading of bool done by CDBI which will cause
+    # problems with $c->model and maybe other stuff as well
+	 use overload bool => sub { $_ };
   }
 
 }
