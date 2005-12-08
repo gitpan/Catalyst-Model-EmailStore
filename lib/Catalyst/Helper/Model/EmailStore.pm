@@ -118,11 +118,12 @@ use strict;
 use base 'Catalyst::Model::EmailStore';
 
 __PACKAGE__->config(
-  dsn           => '[% dsn %]',
-  user          => '[% user %]',
-  password      => '[% pass %]',
-  options       => {},
-  cdbi_plugins  => []
+  dsn                   => '[% dsn %]',
+  user                  => '[% user %]',
+  password              => '[% pass %]',
+  options               => {},
+  cdbi_plugins          => [],
+  upgrade_relationships => 0
 );
 
 =head1 NAME
